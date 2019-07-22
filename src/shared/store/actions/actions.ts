@@ -2,16 +2,22 @@ import { Action } from '@ngrx/store';
 
 export enum ActionTypes {
   GET_LIVE_DATA = 'GET_LIVE_DATA',
-  SAVE_LIVE_DATA = 'SAVE_LIVE_DATA',
+  SET_LIVE_DATA = 'SET_LIVE_DATA',
+  SET_SELECTED_COMPANY = 'SET_SELECTED_COMPANY'
 }
 
 export class GetLiveData implements Action {
-  readonly type = 'GET_LIVE_DATA';
+  readonly type = ActionTypes.GET_LIVE_DATA;
 }
 
-export class SaveLiveData implements Action {
-  readonly type = 'SAVE_LIVE_DATA';
-  constructor(public payload: { liveData: object }) {}
+export class SetLiveData implements Action {
+  readonly type = ActionTypes.SET_LIVE_DATA;
+  constructor(public payload: any) {}
 }
 
-export type Actions = GetLiveData | SaveLiveData;
+// export class SetSelectedCompany implements Action {
+//   readonly type = 'SET_SELECTED_COMPANY';
+//   constructor(public payload: any) {}
+// }
+
+export type Actions = GetLiveData | SetLiveData;

@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from '../shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
-import { featureReducer } from '../shared/store/reducer/reducer';
+import { reducers } from '../shared/store/reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { GameComponent } from './libs/game/game.component';
 
@@ -22,7 +22,7 @@ import { GameComponent } from './libs/game/game.component';
     HttpClientModule,
     SharedModule,
     StoreModule.forRoot({}),
-    StoreModule.forFeature('state', featureReducer),
+    StoreModule.forFeature('state', reducers),
     EffectsModule.forRoot([MyFeatureStoreEffects]),
     StoreDevtoolsModule.instrument({})
   ],

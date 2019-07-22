@@ -20,8 +20,7 @@ export class MyFeatureStoreEffects {
           .getLiveData()
           .pipe(
             map(
-              liveData =>
-                new featureActions.SaveLiveData({liveData})
+              liveData => new featureActions.SetLiveData({liveData})
             ),
             catchError(error =>
               of(Error)

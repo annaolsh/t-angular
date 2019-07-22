@@ -1,8 +1,7 @@
-import { GetLiveData } from './../shared/store/actions/actions';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../shared/services/api.service';
 import { Store } from '@ngrx/store';
-import { State } from '../shared/store/state/state';
+import { GameState } from '../shared/store/state/game-state';
 
 @Component({
   selector: 'app-root',
@@ -13,11 +12,10 @@ export class AppComponent implements OnInit {
   title = 'Trading simulator';
 
   constructor(
-    private apiService: ApiService,
-    private store: Store<State>
+    // private apiService: ApiService,
+    // private store: Store<GameState>
   ) {}
 
   ngOnInit() {
-    this.store.dispatch({type: 'GET_LIVE_DATA'});
   }
 }

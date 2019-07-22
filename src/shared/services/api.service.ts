@@ -6,6 +6,6 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   getLiveData() {
-    return this.http.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AAPL&apikey=0110D30XYYFZ2M1Z');
+    return this.http.get('https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=AAPL&interval=5min&apikey=0110D30XYYFZ2M1Z');
   }
 }
