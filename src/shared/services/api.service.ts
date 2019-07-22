@@ -1,0 +1,11 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class ApiService {
+  constructor(private http: HttpClient) {}
+
+  getLiveData() {
+    return this.http.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AAPL&apikey=0110D30XYYFZ2M1Z');
+  }
+}
